@@ -162,8 +162,31 @@
             echo $info .'<br>';
         }
     }
-
   ?>  
+
+  <?php  
+    // Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche  d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.
+    // declarez une variable description qui va contenir le texte
+        $text = 'Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche  d\'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d\'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.';
+    // extraire 100 premier caractere suivi de ...
+        echo substr($text,0,100) . '<br>';
+        // Supprime les espaces au début et à la fin de la chaine de caractère
+            $message = '  edjek@gmail.com  ';
+            echo '<pre>';
+            echo $message .'<br>';
+            echo str_replace(' ','',$message) . '<br>';
+            echo trim($message);
+            echo '</pre>';
+            
+        // Remplace une chaine de caractère par une autre Paul par Rcahid
+            $message1 = "Bonjour, je m'appelle Paul. Je suis formateur";
+            echo str_replace('Paul','Rachid',$message1) . '<br>';
+
+    // mettre en minuscule $message
+        echo strtolower($message1) . '<br>';
+    // mettre en majuscule $messag
+        echo strtoupper($message1);
+  ?>
 
 </body> 
 </html>
