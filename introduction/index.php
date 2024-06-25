@@ -220,7 +220,10 @@
 
 ?>
 
-<a href="./get.php">get.php</a>
+
+<?php  ?>
+
+<a href="./get.php?name=manoj&age=20">get.php</a>
 
 </body>
 

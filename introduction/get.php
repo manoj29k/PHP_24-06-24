@@ -1,1 +1,1 @@
-cocou
+<p>hello i am <?php echo $_GET['name']; ?> and i am <?php echo $_GET['age']; ?></p>
