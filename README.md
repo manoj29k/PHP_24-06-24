@@ -3,3 +3,11 @@
 
 ### Extensions 
 - PHP Intelephense 
+
+
+### Php Open&close Tag
+```php
+
+    <?php     ?>
+
+```
