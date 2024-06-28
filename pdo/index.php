@@ -1,30 +1,52 @@
-<?php 
-    include_once './src/repository/book.php';
+<?php
+
+require_once './src/config/db.php';
+require_once './src/repository/bookRepository.php';
+
+$pdo = connectDB();
+$books = getAllBooks($pdo);
+
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Librairie Digitale</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-<?php 
-    foreach($books as $key => $book  ){
-   
-?>
-    
-  <div>
-        <h2> <?= $book['nom'] ?> </h2>
-        <p><?= $book['description']  ?></p>
-        <p><?=  $book['annee_parution'] ?></p>
-        <a href="./view/detail.php<?= $book['id']?> ">detail</a>
-  </div>
+    <header>
+        <h1>Library</h1>
+    </header>
 
-<?php } ?>
+    <main>
+        <h2>Liste des livres disponibles :</h2>
+        <div class="book-list">
+            <?php foreach ($books as $book): ?>
+            <div class="book-card">
+                <div class="book-content">
+                    <h3><?php echo htmlspecialchars($book['nom']); ?>
+                    </h3>
+                    <p><?php echo htmlspecialchars($book['description']); ?>
+                    </p>
+                    <p><strong>Année de parution :</strong>
+                        <?php echo htmlspecialchars($book['annee_parution']); ?>
+                    </p>
+                    <a class="details-link"
+                        href="./view/book-details.php?id=<?= $book['id'] ?>">Détails</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </main>
 
-
+    <footer>
+        <p>&copy; 2024 Library</p>
+    </footer>
 </body>
+
 </html>
